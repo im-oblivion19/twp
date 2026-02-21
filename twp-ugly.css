@@ -1,3 +1,6 @@
+body{
+    background-color: darksalmon;
+}
 h1{
     color: red;
     background-color: blue;
@@ -6,8 +9,8 @@ h1{
 }
 
 h2{
-    color: purple;
-    background-color: pink;
+    color: blue;
+    background-color: orange;
     font-size: 200px;
 
 }
@@ -15,5 +18,5 @@ h2{
 p{
     color:lawngreen;
     background-color: black;
-    font-size: 485 px;
+    font-size: 300 px;
 }
