@@ -1,22 +1,311 @@
-body{
-    background-color: darksalmon;
+/* ----------------------------
+   Pink/Purple Theme Variables
+---------------------------- */
+:root{
+  --bg1: #fff1fb;          /* light pink background */
+  --bg2: #f6f0ff;          /* light lavender background */
+  --card: #ffffff;         /* main content */
+  --ink: #1f1530;          /* dark purple text */
+  --muted: #4b3b63;
+
+  --primary: #6d28d9;      /* purple */
+  --primary2: #db2777;     /* pink */
+  --primary3: #9333ea;     /* violet */
+
+  --soft: rgba(109, 40, 217, 0.12);
+  --soft2: rgba(219, 39, 119, 0.12);
+
+  --border: rgba(31, 21, 48, 0.16);
+  --shadow: 0 14px 30px rgba(31, 21, 48, 0.12);
 }
-h1{
-    color: red;
-    background-color: blue;
-    font-size: 60px;
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h2{
-    color: blue;
-    background-color: orange;
-    font-size: 200px;
-
+/* Subtle pink/purple background */
+body {
+  font-family: "Times New Roman", Times, serif;
+  color: var(--ink);
+  line-height: 1.6;
+  padding: 50px 20px;
+  background:
+    radial-gradient(900px 600px at 15% 10%, var(--bg1), transparent 60%),
+    radial-gradient(900px 600px at 85% 0%, var(--bg2), transparent 60%),
+    linear-gradient(180deg, #ffffff, #ffffff);
 }
 
-p{
-    color:lawngreen;
-    background-color: black;
-    font-size: 300 px;
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: var(--card);
+  padding: 40px 50px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(109, 40, 217, 0.10);
+}
+
+/* Typography */
+h1 {
+  font-size: 34px;
+  margin: 22px 0 12px;
+  color: var(--primary);
+}
+
+h2 {
+  margin-top: 45px;
+  margin-bottom: 14px;
+  color: var(--primary3);
+}
+
+h3 {
+  margin-top: 22px;
+  margin-bottom: 10px;
+  color: var(--primary2);
+}
+
+p {
+  margin-bottom: 16px;
+  color: var(--ink);
+}
+
+ul {
+  margin: 10px 0 18px 22px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Links */
+a {
+  color: var(--primary2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* ----------------------------
+   Site header: Logo + nav
+   (GRID layout requirement)
+---------------------------- */
+.site-header {
+  margin-bottom: 18px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Logo pill */
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+  box-shadow: 0 10px 20px rgba(109, 40, 217, 0.18);
+}
+
+.site-logo:hover {
+  filter: brightness(1.03);
+}
+
+.site-logo-text {
+  font-size: 16px;
+}
+
+/* Site nav pills */
+.site-nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.site-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(109, 40, 217, 0.10), rgba(219, 39, 119, 0.10));
+  border: 1px solid rgba(109, 40, 217, 0.18);
+  font-weight: 700;
+}
+
+.site-nav a:hover {
+  background: linear-gradient(180deg, rgba(109, 40, 217, 0.16), rgba(219, 39, 119, 0.16));
+}
+
+/* Page nav under H1 */
+.page-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  margin: 10px 0 18px;
+  background: linear-gradient(90deg, var(--soft), var(--soft2));
+  border: 1px solid rgba(219, 39, 119, 0.20);
+}
+
+.page-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 7px 11px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(109, 40, 217, 0.14);
+}
+
+.page-nav a:hover {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Back-to-top line */
+.backtop {
+  margin-top: 8px;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  display: block;
+}
+
+/* ----------------------------
+   Gallery: 3x3 grid
+---------------------------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.gallery-item {
+  text-align: center;
+  padding: 12px;
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(109, 40, 217, 0.06), rgba(219, 39, 119, 0.06));
+  border: 1px solid rgba(109, 40, 217, 0.14);
+}
+
+.gallery-item img {
+  margin: 0 auto;
+}
+
+.gallery-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ----------------------------
+   Table
+---------------------------- */
+.trash-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 18px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(109, 40, 217, 0.18);
+}
+
+.trash-table th,
+.trash-table td {
+  border: 1px solid rgba(31, 21, 48, 0.12);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.trash-table th {
+  background: linear-gradient(90deg, rgba(109, 40, 217, 0.14), rgba(219, 39, 119, 0.14));
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.trash-table tbody tr:nth-child(even) td {
+  background-color: rgba(109, 40, 217, 0.04);
+}
+
+/* Mode icons */
+.mode i {
+  font-size: 18px;
+  color: var(--primary2);
+}
+
+/* Icon legend */
+.icon-legend {
+  margin-top: 12px;
+  background: linear-gradient(90deg, rgba(109, 40, 217, 0.08), rgba(219, 39, 119, 0.08));
+  border: 1px solid rgba(109, 40, 217, 0.18);
+  padding: 12px 14px;
+  border-radius: 14px;
+}
+
+.icon-legend ul {
+  margin: 8px 0 0 18px;
+}
+
+.icon-legend li {
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.icon-legend i {
+  margin-right: 8px;
+  color: var(--primary);
+}
+
+/* Screen-reader-only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Small screens: stack header */
+@media (max-width: 780px) {
+  .wrapper {
+    padding: 26px 18px;
+  }
+
+  .site-header {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
 }
